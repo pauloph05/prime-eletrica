@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Elétrica | Serviços Elétricos Residenciais e Comerciais</title>
+  <meta name="description" content="Prime Elétrica — serviços elétricos residenciais e comerciais. Instalações, manutenção, ar-condicionado, quadros, câmeras, cerca elétrica, portão eletrônico e automação. Atendimento em São Paulo e Baixada Santista." />
+  <meta name="theme-color" content="#0b2a4a" />
+
+  <meta property="og:title" content="Prime Elétrica | Serviços Elétricos" />
+  <meta property="og:description" content="Atendimento em São Paulo e Baixada Santista. Orçamentos via WhatsApp." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand" aria-label="Prime Elétrica">
+        <div class="brand__mark" aria-hidden="true">⚡</div>
+        <div class="brand__text">
+          <div class="brand__name">Prime Elétrica</div>
+          <div class="brand__tag">Serviços Elétricos Residenciais e Comerciais</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Navegação">
+        <button class="nav__toggle" id="menuBtn" aria-expanded="false" aria-controls="menu">
+          <span class="nav__toggleLines" aria-hidden="true"></span>
+          <span class="sr">Abrir menu</span>
+        </button>
+        <ul class="nav__list" id="menu">
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#atendimento">Atendimento</a></li>
+          <li><a href="#seguranca">Dicas</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="badge">⚡ Orçamentos via WhatsApp</p>
+          <h1>Serviços elétricos com foco em segurança e qualidade</h1>
+          <p class="lead">
+            Atendemos residências e comércios com instalações, manutenção e soluções em segurança e automação.
+            <strong>Região:</strong> São Paulo e Baixada Santista.
+          </p>
+
+          <div class="cta">
+            <a class="btn btn--primary" id="ctaWhats" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+            <a class="btn btn--ghost" href="#servicos">Ver serviços</a>
+          </div>
+
+          <ul class="checks" aria-label="Diferenciais">
+            <li>Atendimento organizado e rápido</li>
+            <li>Execução com padrão técnico</li>
+            <li>Transparência do início ao fim</li>
+          </ul>
+        </div>
+
+        <div class="hero__card" role="region" aria-label="Resumo">
+          <div class="card">
+            <h2 class="card__title">Como funciona</h2>
+            <ol class="steps">
+              <li>Você chama no WhatsApp e informa cidade/bairro e o serviço.</li>
+              <li>Confirmamos a disponibilidade e alinhamos o atendimento.</li>
+              <li>O serviço é executado com segurança e orientação ao cliente.</li>
+            </ol>
+            <div class="card__foot">
+              <small class="muted">*Atendimento sob demanda. Pagamento via Pix ou dinheiro.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section__head">
+          <h2>Serviços</h2>
+          <p class="muted">Selecione um serviço para ver a descrição. Se não encontrar, chama no WhatsApp.</p>
+        </div>
+
+        <div class="services" id="servicesGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" id="atendimento">
+      <div class="container">
+        <div class="section__head">
+          <h2>Onde atendemos</h2>
+          <p class="muted">Atendimento em <strong>São Paulo</strong> e <strong>Baixada Santista</strong>.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <h3 class="card__title">Área principal</h3>
+            <ul class="bullets">
+              <li>São Paulo (capital e região metropolitana)</li>
+              <li>Baixada Santista (Santos, São Vicente, Praia Grande e região)</li>
+            </ul>
+            <p class="muted">Se você estiver fora dessas regiões, fale com a gente: avaliamos disponibilidade.</p>
+            <a class="btn btn--primary" id="ctaWhats2" href="#" target="_blank" rel="noopener">Solicitar avaliação</a>
+          </div>
+
+          <div class="card map">
+            <iframe
+              title="Mapa de São Paulo"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=S%C3%A3o%20Paulo%2C%20SP&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="seguranca">
+      <div class="container">
+        <div class="section__head">
+          <h2>Dicas de segurança elétrica</h2>
+          <p class="muted">Conteúdos que postamos e orientações rápidas para evitar riscos.</p>
+        </div>
+
+        <div class="tips">
+          <article class="tip card">
+            <h3 class="card__title">DR (Diferencial Residual)</h3>
+            <p>Ajuda a proteger contra choques elétricos em caso de fuga de corrente. Essencial em áreas molhadas.</p>
+          </article>
+          <article class="tip card">
+            <h3 class="card__title">DPS (Surtos/Raios)</h3>
+            <p>Protege seus equipamentos contra picos de energia e surtos elétricos, comuns em tempestades.</p>
+          </article>
+          <article class="tip card">
+            <h3 class="card__title">Aterramento</h3>
+            <p>Tomadas com aterramento reduzem risco de choque e ajudam a proteger aparelhos eletrônicos.</p>
+          </article>
+          <article class="tip card">
+            <h3 class="card__title">Tomada aquecendo</h3>
+            <p>Não é normal. Pode indicar mau contato, sobrecarga ou fiação inadequada. Peça revisão.</p>
+          </article>
+        </div>
+
+        <div class="cta center">
+          <a class="btn btn--primary" id="ctaWhats3" href="#" target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contato</h2>
+          <p class="muted">Fale com a Prime Elétrica e informe cidade, bairro e o serviço desejado.</p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <h3 class="card__title">Canais</h3>
+            <div class="contact">
+              <a class="contact__item" id="whatsLink" href="#" target="_blank" rel="noopener">
+                <span class="contact__icon" aria-hidden="true">💬</span>
+                <span>
+                  <strong>WhatsApp</strong><br>
+                  <span class="muted">+55 13 99165-3227</span>
+                </span>
+              </a>
+
+              <a class="contact__item" href="https://www.instagram.com/primeletrica_?igsh=eGxwcnNmbDBiZm8x" target="_blank" rel="noopener">
+                <span class="contact__icon" aria-hidden="true">📷</span>
+                <span>
+                  <strong>Instagram</strong><br>
+                  <span class="muted">@primeletrica_</span>
+                </span>
+              </a>
+
+              <a class="contact__item" href="https://www.facebook.com/share/1EtxMSZsKB/" target="_blank" rel="noopener">
+                <span class="contact__icon" aria-hidden="true">📘</span>
+                <span>
+                  <strong>Facebook</strong><br>
+                  <span class="muted">Página oficial</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="card__title">Horário</h3>
+            <ul class="bullets">
+              <li>Seg–Sex: 08:00 às 20:00</li>
+              <li>Sáb: 08:00 às 14:00</li>
+              <li>Dom: sob consulta</li>
+            </ul>
+            <p class="muted">*Atendimentos emergenciais podem ser avaliados conforme disponibilidade.</p>
+            <a class="btn btn--primary" id="ctaWhats4" href="#" target="_blank" rel="noopener">Chamar agora</a>
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container footer__inner">
+            <small>© <span id="year"></span> Prime Elétrica. Todos os direitos reservados.</small>
+            <small class="muted">Site estático — pronto para hospedagem.</small>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
