@@ -2,317 +2,507 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Instalação de Ar Condicionado | Prime Elétrica</title>
-  <meta name="description" content="Instalação profissional de ar-condicionado split na Baixada Santista e SP. Orçamento rápido no WhatsApp.">
-
+  <meta name="description" content="Instalação profissional de ar-condicionado split residencial com rapidez, segurança e acabamento. Atendimento em Praia Grande, Santos, São Vicente e Cubatão." />
   <style>
     :root{
-      --azul:#0a4b9e;           /* cor principal Prime */
-      --azul-escuro:#073a7a;
-      --amarelo:#ffcc00;        /* destaque Prime */
-      --bg:#0b1220;
-      --card:#0f1b33;
-      --texto:#eaf0ff;
-      --muted:#b9c7ea;
-      --borda:rgba(255,255,255,.12);
-      --shadow:0 12px 30px rgba(0,0,0,.35);
+      --bg1:#041a33;
+      --bg2:#062c55;
+      --card:#0b2546cc;
+      --stroke:#1c3b66;
+      --text:#eaf3ff;
+      --muted:#bcd3ee;
+      --primeBlue:#0b4b9e;
+      --primeYellow:#ffcc00;
+      --whats:#25d366;
+      --shadow: 0 18px 55px rgba(0,0,0,.35);
+      --radius: 18px;
     }
 
     *{ box-sizing:border-box; }
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(1200px 600px at 20% 10%, rgba(10,75,158,.35), transparent 55%),
-                  radial-gradient(900px 500px at 85% 20%, rgba(255,204,0,.15), transparent 50%),
-                  linear-gradient(180deg, #070c16, var(--bg));
-      color: var(--texto);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(11,75,158,.35), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(255,204,0,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height:100vh;
     }
 
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 36px 18px 70px;
-    }
+    a{ color:inherit; text-decoration:none; }
 
     .topbar{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
-      margin-bottom:22px;
+      padding:18px 22px;
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: linear-gradient(180deg, rgba(4,26,51,.95), rgba(4,26,51,.65));
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.06);
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.2px;
     }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--primeYellow);
+      box-shadow: 0 0 0 3px rgba(255,204,0,.18);
+    }
+    .brand small{
+      display:block;
+      font-weight:500;
+      color:var(--muted);
+      margin-top:2px;
+    }
 
-    .badge{
-      font-size:12px;
-      padding:6px 10px;
-      border:1px solid var(--borda);
+    .pill{
+      padding:10px 14px;
       border-radius:999px;
-      color: var(--muted);
-      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(10,26,46,.55);
+      font-weight:600;
+      color:var(--text);
+    }
+
+    .wrap{
+      width:min(1100px, 92vw);
+      margin: 22px auto 60px;
     }
 
     .hero{
-      background: linear-gradient(135deg, rgba(10,75,158,.35), rgba(15,27,51,.85));
-      border:1px solid var(--borda);
-      border-radius:18px;
-      padding:26px 22px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(12,45,86,.92), rgba(7,30,60,.78));
+      border:1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
+      padding: 28px 28px 22px;
+      position:relative;
+      overflow:hidden;
     }
-
-    h1{
-      margin: 0 0 10px;
-      font-size: 40px;
-      line-height: 1.05;
-      color: #ffffff;
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:-120px -120px auto auto;
+      width:320px;height:320px;
+      background: radial-gradient(circle, rgba(255,204,0,.22), transparent 60%);
+      transform: rotate(18deg);
+      pointer-events:none;
     }
-
-    .subtitle{
-      margin: 0 0 18px;
-      font-size: 18px;
+    .hero h1{
+      margin:0;
+      font-size: clamp(30px, 4.2vw, 52px);
+      line-height:1.04;
+    }
+    .hero p{
+      margin:10px 0 0;
       color: var(--muted);
-      line-height: 1.5;
-      max-width: 860px;
+      font-size: clamp(14px, 1.6vw, 17px);
+      max-width: 920px;
+    }
+    .highlight{
+      color:var(--primeYellow);
+      font-weight:800;
     }
 
     .ctaRow{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
+      margin-top: 18px;
       align-items:center;
-      margin-top: 16px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
+      justify-content:center;
       gap:10px;
-      border:0;
+      padding:14px 18px;
+      border-radius: 14px;
+      font-weight:800;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 14px 35px rgba(0,0,0,.25);
       cursor:pointer;
-      text-decoration:none;
-      font-weight:700;
-      padding: 14px 18px;
-      border-radius: 12px;
-      transition: transform .08s ease, filter .2s ease;
+      transition: transform .12s ease, filter .12s ease, background .12s ease;
       user-select:none;
+      white-space:nowrap;
     }
-    .btn:active{ transform: scale(.98); }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+    .btn:active{ transform: translateY(0px); }
 
-    .btn-whats{
-      background: #25D366;
-      color:#0b1220;
+    .btnWhats{
+      background: linear-gradient(180deg, rgba(37,211,102,1), rgba(24,170,80,1));
+      color:#052011;
+      border:none;
     }
-    .btn-whats:hover{ filter: brightness(1.02); }
-
-    .btn-call{
+    .btnCall{
       background: rgba(255,255,255,.08);
-      color: var(--texto);
-      border:1px solid var(--borda);
+      color: var(--text);
     }
-    .btn-call:hover{ filter: brightness(1.08); }
 
     .grid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-      margin-top: 18px;
-    }
-    @media (max-width: 900px){
-      .grid{ grid-template-columns: 1fr; }
-      h1{ font-size: 34px; }
+      grid-template-columns: 1.35fr .85fr;
+      gap:16px;
+      margin-top:18px;
+      align-items:start;
     }
 
     .card{
-      background: rgba(15,27,51,.92);
-      border:1px solid var(--borda);
-      border-radius:18px;
-      padding: 18px;
+      background: rgba(9,30,60,.60);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
+      padding: 18px;
     }
 
     .card h2{
-      margin: 0 0 12px;
-      font-size: 22px;
-      color: #fff;
+      margin:0 0 6px;
+      font-size: 26px;
+      letter-spacing:.2px;
+    }
+    .sub{
+      color:var(--muted);
+      margin:0 0 14px;
     }
 
-    /* ✅ Aqui está a correção do seu problema:
-       texto SEMPRE visível (preto no claro não existe aqui),
-       e itens com fundo e borda legíveis no tema escuro */
+    /* Galeria */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin-top:10px;
+    }
+    .gItem{
+      border-radius: 16px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.15);
+    }
+    .gItem img{
+      width:100%;
+      height:170px;
+      object-fit: cover;
+      display:block;
+    }
+    .gCap{
+      padding:10px 12px;
+      color: var(--text);
+      font-weight:700;
+      font-size: 14px;
+      border-top:1px solid rgba(255,255,255,.07);
+      background: rgba(10,26,46,.55);
+    }
+
+    /* Lista */
     .list{
-      list-style:none;
-      padding:0;
-      margin:0;
       display:flex;
       flex-direction:column;
       gap:10px;
+      margin-top:8px;
     }
-    .list li{
+    .item{
       display:flex;
-      gap:10px;
+      gap:12px;
       align-items:flex-start;
-      padding:14px 14px;
-      border-radius:14px;
+      padding:12px 12px;
+      border-radius:16px;
       background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      color: var(--texto);
+      border:1px solid rgba(255,255,255,.08);
     }
-    .check{
-      width:22px;
-      height:22px;
-      flex:0 0 22px;
-      border-radius:6px;
-      display:grid;
-      place-items:center;
-      background: rgba(255,204,0,.18);
-      border: 1px solid rgba(255,204,0,.35);
-      color: var(--amarelo);
+    .badge{
+      width:26px;height:26px;border-radius:8px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       font-weight:900;
-      line-height:1;
+      color:#1a1400;
+      background: rgba(255,204,0,.92);
+      flex:0 0 auto;
       margin-top:1px;
     }
+    .item strong{ display:block; }
+    .item span{ color: var(--muted); display:block; margin-top:3px; }
 
-    .mini{
+    /* Caixa de dicas */
+    .infoBox{
+      border-radius: 16px;
+      padding: 14px 14px;
+      border: 1px solid rgba(255,204,0,.28);
+      background: linear-gradient(180deg, rgba(255,204,0,.10), rgba(255,204,0,.05));
+      color: var(--text);
+      margin-top: 14px;
+    }
+    .infoBox b{ color: var(--primeYellow); }
+    .infoBox ul{
+      margin: 10px 0 0 18px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.45;
-      margin-top: 10px;
     }
 
-    .priceBox{
+    .rightBox .mini{
       display:flex;
       flex-direction:column;
       gap:10px;
+      margin-top:10px;
     }
-
-    .pill{
+    .chip{
       display:flex;
+      align-items:center;
       justify-content:space-between;
-      gap:12px;
+      gap:10px;
       padding:12px 12px;
-      border-radius:14px;
+      border-radius:16px;
       background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      color: var(--texto);
-      font-size: 15px;
-    }
-    .pill strong{ color:#fff; }
-
-    .note{
-      margin-top:12px;
-      padding:12px 12px;
-      border-radius:14px;
-      border:1px solid rgba(255,204,0,.35);
-      background: rgba(255,204,0,.10);
-      color: #fff;
-      font-size:14px;
-      line-height:1.45;
-    }
-
-    .footer{
-      margin-top:18px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align:center;
-      opacity:.95;
-    }
-
-    .divider{
-      height:1px;
-      background: rgba(255,255,255,.10);
-      margin:16px 0;
-      border-radius:999px;
-    }
-
-    .highlight{
-      color: var(--amarelo);
+      border:1px solid rgba(255,255,255,.08);
       font-weight:700;
+    }
+    .chip .ok{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .okDot{
+      width:18px;height:18px;border-radius:6px;
+      background: rgba(37,211,102,.95);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#06210f;
+      font-weight:900;
+      font-size:12px;
+    }
+    .chip small{ color: var(--muted); font-weight:700; }
+
+    .centerCta{
+      text-align:center;
+      margin-top: 14px;
+    }
+    .btnFull{
+      width:100%;
+      justify-content:center;
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+    }
+
+    /* Responsivo */
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+      .gallery{ grid-template-columns: 1fr; }
+      .gItem img{ height:220px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-
-    <div class="topbar">
-      <div class="brand">
-        <span style="width:10px;height:10px;border-radius:50%;background:var(--amarelo);display:inline-block;"></span>
-        <span>Prime Elétrica</span>
+  <header class="topbar">
+    <div class="brand">
+      <span class="dot"></span>
+      <div>
+        Prime Elétrica
+        <small>Serviços Elétricos</small>
       </div>
-      <div class="badge">Instalação de Ar Condicionado</div>
     </div>
 
+    <a class="pill" href="index.html">Voltar ao site</a>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
     <section class="hero">
       <h1>Instalação de Ar Condicionado</h1>
-      <p class="subtitle">
+      <p>
         Instalação profissional de ar-condicionado <span class="highlight">split residencial</span>, com segurança e acabamento.
-        Atendimento em <b>Praia Grande, Santos, São Vicente e Cubatão</b>.
+        Atendimento em <span class="highlight">Praia Grande, Santos, São Vicente e Cubatão</span>.
       </p>
 
       <div class="ctaRow">
-        <!-- Troque o número/MSG se quiser -->
-        <a class="btn btn-whats" href="https://wa.me/5513991653227?text=Olá!%20Quero%20orçamento%20para%20instalação%20de%20ar-condicionado." target="_blank" rel="noopener">
+        <a class="btn btnWhats" target="_blank"
+           href="https://wa.me/5513991653227?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20para%20instala%C3%A7%C3%A3o%20de%20ar-condicionado.%0A%0ACidade/Bairro:%0ABTUs:%0ATens%C3%A3o%20(110/220):%0AJ%C3%A1%20tem%20ponto%20el%C3%A9trico%20perto%3F">
           ✅ Orçamento no WhatsApp
         </a>
 
-        <!-- Se quiser telefone clicável -->
-        <a class="btn btn-call" href="tel:+5513991653227">
+        <a class="btn btnCall" href="tel:+55139799479709">
           📞 Ligar agora
         </a>
       </div>
     </section>
 
-    <div class="grid">
-      <section class="card">
-        <h2>Serviços realizados</h2>
-        <ul class="list">
-          <li><span class="check">✓</span> Instalação completa do ar-condicionado</li>
-          <li><span class="check">✓</span> Passagem de tubulação e dreno</li>
-          <li><span class="check">✓</span> Instalação elétrica dedicada (quando necessário)</li>
-          <li><span class="check">✓</span> Disjuntor exclusivo para o aparelho</li>
-          <li><span class="check">✓</span> Suporte, fixação e acabamento</li>
-        </ul>
+    <!-- GRID -->
+    <section class="grid">
+      <!-- ESQUERDA -->
+      <div>
+        <!-- GALERIA (resolve o “espaço vazio” e dá prova visual) -->
+        <section class="card">
+          <h2>Algumas imagens do serviço</h2>
+          <p class="sub">Exemplos ilustrativos do tipo de instalação.</p>
 
-        <div class="divider"></div>
-        <p class="mini">
-          <b>Importante:</b> valores variam conforme distância, metragem de tubulação, tipo de parede e necessidade de elétrica.
-          Peça seu orçamento e te respondemos rápido.
-        </p>
-      </section>
+          <div class="gallery">
+            <div class="gItem">
+              <img src="assets/img/art1.webp" alt="Ar condicionado split instalado" loading="lazy">
+              <div class="gCap">Ar condicionado split instalado</div>
+            </div>
 
-      <aside class="card priceBox">
+            <div class="gItem">
+              <img src="assets/img/art2.webp" alt="Técnico realizando instalação" loading="lazy">
+              <div class="gCap">Técnico realizando instalação</div>
+            </div>
+
+            <div class="gItem">
+              <img src="assets/img/art3.png" alt="Exemplo de instalação residencial" loading="lazy">
+              <div class="gCap">Exemplo de instalação residencial</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section class="card" style="margin-top:16px;">
+          <h2>Serviços realizados</h2>
+          <p class="sub">O que normalmente está incluso na instalação.</p>
+
+          <div class="list">
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <strong>Instalação completa do ar-condicionado</strong>
+                <span>Com acabamento e funcionamento testado.</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <strong>Passagem de tubulação e dreno</strong>
+                <span>Organização e vedação adequada.</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <strong>Instalação elétrica dedicada (quando necessário)</strong>
+                <span>Dimensionamento correto para evitar queda/aquecimento.</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <strong>Disjuntor exclusivo para o aparelho</strong>
+                <span>Mais segurança e proteção do circuito.</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <strong>Suporte e fixação do equipamento</strong>
+                <span>Instalação firme e alinhada.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="infoBox">
+            <b>Dica rápida:</b> para agilizar o orçamento, tenha em mãos:
+            <ul>
+              <li>Cidade/bairro</li>
+              <li>BTUs do aparelho</li>
+              <li>Tensão (110/220)</li>
+              <li>Se já tem ponto elétrico perto</li>
+            </ul>
+          </div>
+
+          <div class="centerCta">
+            <a class="btn btnWhats" target="_blank"
+              href="https://wa.me/5513991653227?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20para%20instala%C3%A7%C3%A3o%20de%20ar-condicionado.%0A%0ACidade/Bairro:%0ABTUs:%0ATens%C3%A3o%20(110/220):%0AJ%C3%A1%20tem%20ponto%20el%C3%A9trico%20perto%3F">
+              ✅ Pedir orçamento agora
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <!-- DIREITA -->
+      <aside class="card rightBox">
         <h2>Como funciona</h2>
+        <p class="sub">Atendimento direto e sem enrolação.</p>
 
-        <div class="pill"><span>✅ Atendimento rápido</span> <strong>Baixada + SP</strong></div>
-        <div class="pill"><span>✅ Profissional qualificado</span> <strong>Segurança</strong></div>
-        <div class="pill"><span>✅ Orçamento no WhatsApp</span> <strong>Imediato</strong></div>
+        <div class="mini">
+          <div class="chip">
+            <div class="ok"><span class="okDot">✓</span> Atendimento rápido</div>
+            <small>Baixada + SP</small>
+          </div>
 
-        <div class="note">
-          Clique em <b>“Orçamento no WhatsApp”</b> e envie:
-          <br>• Cidade/bairro
-          <br>• BTUs do aparelho
-          <br>• Se já tem ponto 220V
-          <br>• Distância aproximada entre as unidades
+          <div class="chip">
+            <div class="ok"><span class="okDot">✓</span> Profissional qualificado</div>
+            <small>Segurança</small>
+          </div>
+
+          <div class="chip">
+            <div class="ok"><span class="okDot">✓</span> Orçamento no WhatsApp</div>
+            <small>Imediato</small>
+          </div>
         </div>
 
-        <a class="btn btn-whats" style="justify-content:center;" href="https://wa.me/5513991653227?text=Olá!%20Quero%20orçamento%20para%20instalação%20de%20ar-condicionado.%20Cidade:%20____%20BTUs:%20____%20Tenho%20220V?%20____" target="_blank" rel="noopener">
-          💬 Quero orçamento agora
-        </a>
+        <div class="infoBox">
+          Clique em <b>“Orçamento no WhatsApp”</b> e envie:
+          <ul>
+            <li><b>Cidade/bairro</b></li>
+            <li><b>BTUs</b> do aparelho</li>
+            <li><b>Tensão</b> (110/220)</li>
+            <li>Se já tem <b>ponto elétrico</b> perto</li>
+          </ul>
+        </div>
+
+        <div class="centerCta">
+          <a class="btn btnFull" target="_blank"
+             href="https://wa.me/5513991653227?text=Ol%C3%A1!%20Quero%20or%C3%A7amento%20para%20instala%C3%A7%C3%A3o%20de%20ar-condicionado.%0A%0ACidade/Bairro:%0ABTUs:%0ATens%C3%A3o%20(110/220):%0AJ%C3%A1%20tem%20ponto%20el%C3%A9trico%20perto%3F">
+            Chamar no WhatsApp agora
+          </a>
+        </div>
+
+        <!-- BLOCO EXTRA PARA ACABAR COM QUALQUER “BURACO” E AUMENTAR CONVERSÃO -->
+        <section class="card" style="margin-top:16px;">
+          <h2>Por que escolher a Prime Elétrica?</h2>
+          <p class="sub">Foco em acabamento, segurança e resultado.</p>
+
+          <div class="list">
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <strong>Acabamento e alinhamento</strong>
+                <span>Nada torto ou mal fixado.</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <strong>Dimensionamento correto</strong>
+                <span>Evita quedas e sobrecarga.</span>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="badge">✓</div>
+              <div>
+                <strong>Garantia do serviço</strong>
+                <span>Se for relacionado à instalação, resolvemos.</span>
+              </div>
+            </div>
+          </div>
+        </section>
       </aside>
-    </div>
-
-    <p class="footer">
-      Prime Elétrica • Atendimento: Praia Grande • Santos • São Vicente • Cubatão
-    </p>
-
-  </div>
+    </section>
+  </main>
 </body>
 </html>

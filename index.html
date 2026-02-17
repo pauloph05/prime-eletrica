@@ -2,220 +2,551 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prime Elétrica | Serviços Elétricos Residenciais e Comerciais</title>
-  <meta name="description" content="Prime Elétrica — serviços elétricos residenciais e comerciais. Instalações, manutenção, ar-condicionado, quadros, câmeras, cerca elétrica, portão eletrônico e automação. Atendimento em São Paulo e Baixada Santista." />
-  <meta name="theme-color" content="#0b2a4a" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prime Elétrica | Serviços Elétricos na Baixada Santista</title>
+  <meta name="description" content="Serviços elétricos residenciais e comerciais. Atendimento em Praia Grande, Santos, São Vicente e Cubatão. Orçamento rápido no WhatsApp." />
 
-  <meta property="og:title" content="Prime Elétrica | Serviços Elétricos" />
-  <meta property="og:description" content="Atendimento em São Paulo e Baixada Santista. Orçamentos via WhatsApp." />
-  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg1:#071a2a;
+      --bg2:#0b2a44;
+      --card:#0e2c46cc;
+      --stroke:rgba(255,255,255,.10);
+      --text:#eaf3ff;
+      --muted:#b7c7dd;
+      --accent:#f2c300;      /* amarelo Prime */
+      --accent2:#2dd36f;     /* verde WhatsApp */
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius: 22px;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(24,122,255,.25), transparent 60%),
+        radial-gradient(900px 600px at 90% 20%, rgba(242,195,0,.18), transparent 55%),
+        linear-gradient(160deg, var(--bg1), var(--bg2));
+    }
 
-  <link rel="stylesheet" href="styles.css" />
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1180px; margin:0 auto; padding:26px 18px 60px}
+
+    /* Header */
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:10px 8px 18px;
+      position:sticky; top:0;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(7,26,42,.86), rgba(7,26,42,.55));
+      border-bottom:1px solid rgba(255,255,255,.06);
+      z-index:10;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:44px; height:44px; border-radius:16px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
+      display:grid; place-items:center;
+      overflow:hidden;
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .brand b{font-size:20px}
+    .brand small{display:block; color:var(--muted); margin-top:2px}
+
+    .nav{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; color:var(--muted)}
+    .nav a{
+      padding:10px 12px; border-radius:999px; border:1px solid transparent;
+    }
+    .nav a:hover{border-color:var(--stroke); background:rgba(255,255,255,.04); color:var(--text)}
+
+    /* Hero */
+    .hero{
+      border-radius: var(--radius);
+      border:1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+      background: linear-gradient(180deg, rgba(13,45,77,.78), rgba(9,30,52,.78));
+    }
+    .hero-cover{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(650px 260px at 25% 0%, rgba(242,195,0,.14), transparent 60%),
+        radial-gradient(550px 240px at 85% 15%, rgba(45,211,111,.12), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      padding:26px;
+      align-items:center;
+    }
+    @media(max-width:920px){ .hero-inner{grid-template-columns:1fr} }
+
+    h1{margin:0 0 10px; font-size:48px; line-height:1.05; letter-spacing:-.02em}
+    @media (max-width:520px){ h1{font-size:36px} }
+    .lead{color:var(--muted); font-size:18px; margin:0 0 16px}
+    .lead strong{color:var(--accent)}
+    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      padding:10px 12px; border-radius:999px;
+      color:var(--muted); font-size:13px;
+    }
+    .badge i{width:10px; height:10px; border-radius:99px; background:var(--accent); box-shadow:0 0 0 6px rgba(242,195,0,.15)}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-end}
+    @media(max-width:920px){ .cta{justify-content:flex-start} }
+
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      border-radius:14px;
+      padding:14px 18px;
+      font-weight:800;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      cursor:pointer;
+      transition: transform .08s ease, filter .12s ease;
+    }
+    .btn:hover{transform: translateY(-1px); filter:brightness(1.06)}
+    .btn-green{
+      background: linear-gradient(180deg, rgba(45,211,111,.95), rgba(27,170,86,.95));
+      color:#06210f;
+      border-color: rgba(45,211,111,.45);
+    }
+    .btn-yellow{
+      background: linear-gradient(180deg, rgba(242,195,0,.95), rgba(203,160,0,.95));
+      color:#1b1600;
+      border-color: rgba(242,195,0,.55);
+    }
+
+    /* Sections */
+    .section{margin-top:22px}
+    .card{
+      background: linear-gradient(180deg, rgba(13,45,77,.68), rgba(9,30,52,.76));
+      border:1px solid var(--stroke);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:18px;
+      overflow:hidden;
+    }
+
+    .title-row{display:flex; align-items:end; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:10px}
+    .title-row h2{margin:0; font-size:34px; letter-spacing:-.01em}
+    .title-row p{margin:0; color:var(--muted)}
+
+    /* Services grid */
+    .services{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width:1100px){ .services{grid-template-columns: repeat(2, 1fr)} }
+    @media (max-width:560px){ .services{grid-template-columns: 1fr} }
+
+    .svc{
+      border-radius:18px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      padding:14px;
+      display:flex; gap:12px;
+      align-items:flex-start;
+      cursor:pointer;
+      transition: transform .08s ease, filter .12s ease;
+      min-height:96px;
+    }
+    .svc:hover{transform: translateY(-1px); filter:brightness(1.07)}
+    .ico{
+      width:38px; height:38px; border-radius:14px;
+      background: rgba(255,255,255,.06);
+      border:1px solid var(--stroke);
+      display:grid; place-items:center;
+      color: var(--accent);
+      font-weight:900;
+      flex:0 0 auto;
+    }
+    .svc b{display:block}
+    .svc span{color:var(--muted); font-size:13px; font-weight:650}
+
+    /* Tips (igual print) */
+    .tips-head{display:flex; align-items:flex-end; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom:12px}
+    .tips-head h2{margin:0; font-size:40px; letter-spacing:-.02em}
+    .tips-head p{margin:0; color:var(--muted); font-weight:700}
+    .tips-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin-top:12px;
+    }
+    @media (max-width:1100px){ .tips-grid{grid-template-columns: repeat(2, 1fr)} }
+    @media (max-width:560px){ .tips-grid{grid-template-columns: 1fr} }
+    .tip{
+      border-radius:18px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      padding:16px;
+      min-height:150px;
+    }
+    .tip b{display:block; font-size:20px; margin-bottom:8px}
+    .tip p{margin:0; color:var(--muted); font-weight:650; line-height:1.4}
+
+    /* Hours + Map + Contact */
+    .grid-2{display:grid; grid-template-columns: 1fr 1fr; gap:16px}
+    @media (max-width:920px){ .grid-2{grid-template-columns:1fr} }
+
+    .hours{display:flex; flex-direction:column; gap:10px; margin-top:10px; color:var(--muted); font-weight:700}
+    .hours .line{
+      padding:12px 14px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.03);
+      border-radius:16px;
+    }
+
+    .mapwrap{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.03);
+      margin-top:12px;
+      min-height:280px;
+    }
+    .mapwrap iframe{width:100%; height:360px; border:0; display:block}
+
+    .contact-box h2{margin:0 0 10px; font-size:40px}
+    .contact-inner{
+      margin-top:10px;
+      border-radius:22px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.04);
+      padding:16px;
+    }
+    .contact-inner h3{margin:0 0 10px; font-size:22px}
+    .contact-list{display:flex; flex-direction:column; gap:12px}
+    .contact-item{
+      display:flex; gap:12px; align-items:center;
+      border-radius:18px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.03);
+      padding:14px;
+      cursor:pointer;
+      transition: transform .08s ease, filter .12s ease;
+    }
+    .contact-item:hover{transform: translateY(-1px); filter:brightness(1.07)}
+    .cico{
+      width:44px; height:44px; border-radius:16px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
+      display:grid; place-items:center;
+      flex:0 0 auto;
+    }
+    .contact-item b{display:block; font-size:18px}
+    .contact-item span{display:block; color:var(--muted); font-weight:700}
+
+    footer{
+      margin-top:24px;
+      color:var(--muted);
+      text-align:center;
+      font-weight:700;
+    }
+  </style>
 </head>
+
 <body>
-  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-
-  <header class="header">
-    <div class="container header__inner">
-      <div class="brand" aria-label="Prime Elétrica">
-        <div class="brand__mark" aria-hidden="true">⚡</div>
-        <div class="brand__text">
-          <div class="brand__name">Prime Elétrica</div>
-          <div class="brand__tag">Serviços Elétricos Residenciais e Comerciais</div>
-        </div>
+  <div class="topbar">
+    <div class="brand">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Prime Elétrica">
       </div>
-
-      <nav class="nav" aria-label="Navegação">
-        <button class="nav__toggle" id="menuBtn" aria-expanded="false" aria-controls="menu">
-          <span class="nav__toggleLines" aria-hidden="true"></span>
-          <span class="sr">Abrir menu</span>
-        </button>
-        <ul class="nav__list" id="menu">
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#atendimento">Atendimento</a></li>
-          <li><a href="#seguranca">Dicas</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
+      <div>
+        <b>Prime Elétrica</b>
+        <small>Serviços Elétricos Residenciais e Comerciais</small>
+      </div>
     </div>
-  </header>
 
-  <main id="conteudo">
+    <div class="nav">
+      <a href="#servicos">Serviços</a>
+      <a href="#atendimento">Atendimento</a>
+      <a href="#dicas">Dicas</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- HERO -->
     <section class="hero" id="inicio">
-      <div class="container hero__grid">
-        <div class="hero__copy">
-          <p class="badge">⚡ Orçamentos via WhatsApp</p>
+      <div class="hero-cover"></div>
+
+      <div class="hero-inner">
+        <div>
           <h1>Serviços elétricos com foco em segurança e qualidade</h1>
           <p class="lead">
-            Atendemos residências e comércios com instalações, manutenção e soluções em segurança e automação.
-            <strong>Região:</strong> São Paulo e Baixada Santista.
+            Atendemos <strong>Praia Grande, Santos, São Vicente e Cubatão</strong>.
+            Orçamento rápido no WhatsApp e atendimento organizado do início ao fim.
           </p>
 
-          <div class="cta">
-            <a class="btn btn--primary" id="ctaWhats" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
-            <a class="btn btn--ghost" href="#servicos">Ver serviços</a>
+          <div class="badges">
+            <span class="badge"><i></i> Atendimento rápido</span>
+            <span class="badge"><i></i> Padrão técnico</span>
+            <span class="badge"><i></i> Transparência</span>
           </div>
-
-          <ul class="checks" aria-label="Diferenciais">
-            <li>Atendimento organizado e rápido</li>
-            <li>Execução com padrão técnico</li>
-            <li>Transparência do início ao fim</li>
-          </ul>
         </div>
 
-        <div class="hero__card" role="region" aria-label="Resumo">
-          <div class="card">
-            <h2 class="card__title">Como funciona</h2>
-            <ol class="steps">
-              <li>Você chama no WhatsApp e informa cidade/bairro e o serviço.</li>
-              <li>Confirmamos a disponibilidade e alinhamos o atendimento.</li>
-              <li>O serviço é executado com segurança e orientação ao cliente.</li>
-            </ol>
-            <div class="card__foot">
-              <small class="muted">*Atendimento sob demanda. Pagamento via Pix ou dinheiro.</small>
-            </div>
-          </div>
+        <div class="cta">
+          <a class="btn btn-green" id="btnWhatsHero" href="#" target="_blank" rel="noopener">💬 Orçamento no WhatsApp</a>
+          <a class="btn" href="tel:+5513991653227">📞 Ligar agora</a>
+          <a class="btn btn-yellow" href="#servicos">⚡ Ver serviços</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="servicos">
-      <div class="container">
-        <div class="section__head">
+    <!-- SERVIÇOS -->
+    <section class="section card" id="servicos">
+      <div class="title-row">
+        <div>
           <h2>Serviços</h2>
-          <p class="muted">Selecione um serviço para ver a descrição. Se não encontrar, chama no WhatsApp.</p>
+          <p>Selecione um serviço. Se não encontrar, chama no WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="services">
+        <div class="svc" data-type="wpp" data-wpp="Instalações elétricas (residencial/comercial)">
+          <div class="ico">⚡</div>
+          <div><b>Instalações Elétricas</b><span>Instalações novas, adequações e reformas com padrão técnico.</span></div>
         </div>
 
-        <div class="services" id="servicesGrid" aria-live="polite"></div>
+        <!-- AQUI: AR CONDICIONADO abre a página -->
+        <div class="svc" data-type="page" data-page="ar-condicionado.html">
+          <div class="ico">❄️</div>
+          <div><b>Instalação de Ar Condicionado</b><span>Veja detalhes, fotos e orçamento específico.</span></div>
+        </div>
+
+        <div class="svc" data-type="wpp" data-wpp="Manutenção elétrica (tomadas, disjuntor, curto)">
+          <div class="ico">🛠️</div>
+          <div><b>Manutenção Elétrica</b><span>Correção de falhas, curto, disjuntores e revisão.</span></div>
+        </div>
+
+        <div class="svc" data-type="wpp" data-wpp="Quadro de distribuição (montagem e organização)">
+          <div class="ico">📦</div>
+          <div><b>Quadro de Distribuição</b><span>Montagem, organização e identificação de circuitos.</span></div>
+        </div>
+
+        <div class="svc" data-type="wpp" data-wpp="Câmeras de segurança (instalação e configuração)">
+          <div class="ico">📷</div>
+          <div><b>Câmeras de Segurança</b><span>Instalação e configuração com acesso pelo celular.</span></div>
+        </div>
+
+        <div class="svc" data-type="wpp" data-wpp="Cerca elétrica (instalação e manutenção)">
+          <div class="ico">🔒</div>
+          <div><b>Cerca Elétrica</b><span>Instalação e manutenção para residência e comércio.</span></div>
+        </div>
+
+        <div class="svc" data-type="wpp" data-wpp="Portão eletrônico (instalação e automação)">
+          <div class="ico">🚪</div>
+          <div><b>Portão Eletrônico</b><span>Instalação e automação com circuito dedicado.</span></div>
+        </div>
+
+        <div class="svc" data-type="wpp" data-wpp="Automação residencial (iluminação e tomadas)">
+          <div class="ico">🏠</div>
+          <div><b>Automação Residencial</b><span>Iluminação, tomadas e dispositivos inteligentes (sob demanda).</span></div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; display:flex; justify-content:center">
+        <a class="btn btn-green" id="btnWhatsServ" href="#" target="_blank" rel="noopener">💬 Chamar no WhatsApp</a>
       </div>
     </section>
 
-    <section class="section" id="atendimento">
-      <div class="container">
-        <div class="section__head">
-          <h2>Onde atendemos</h2>
-          <p class="muted">Atendimento em <strong>São Paulo</strong> e <strong>Baixada Santista</strong>.</p>
+    <!-- ATENDIMENTO (como funciona) -->
+    <section class="section card" id="atendimento">
+      <div class="title-row">
+        <div>
+          <h2>Atendimento</h2>
+          <p>Como a Prime Elétrica trabalha (organizado e rápido).</p>
         </div>
+      </div>
 
-        <div class="grid2">
-          <div class="card">
-            <h3 class="card__title">Área principal</h3>
-            <ul class="bullets">
-              <li>São Paulo (capital e região metropolitana)</li>
-              <li>Baixada Santista (Santos, São Vicente, Praia Grande e região)</li>
-            </ul>
-            <p class="muted">Se você estiver fora dessas regiões, fale com a gente: avaliamos disponibilidade.</p>
-            <a class="btn btn--primary" id="ctaWhats2" href="#" target="_blank" rel="noopener">Solicitar avaliação</a>
+      <div class="services" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="svc" style="cursor:default">
+          <div class="ico">✅</div>
+          <div><b>Diagnóstico</b><span>Entendemos o problema e confirmamos o que precisa ser feito.</span></div>
+        </div>
+        <div class="svc" style="cursor:default">
+          <div class="ico">🧾</div>
+          <div><b>Orçamento claro</b><span>Você sabe o valor e o que está incluso antes de iniciar.</span></div>
+        </div>
+        <div class="svc" style="cursor:default">
+          <div class="ico">🛡️</div>
+          <div><b>Execução segura</b><span>Padrão técnico, acabamento e teste final.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DICAS (igual seu print) -->
+    <section class="section card" id="dicas">
+      <div class="tips-head">
+        <h2>Dicas de segurança elétrica</h2>
+        <p>Conteúdos que postamos e orientações rápidas para evitar riscos.</p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip">
+          <b>DR (Diferencial Residual)</b>
+          <p>Ajuda a proteger contra choques elétricos em caso de fuga de corrente. Essencial em áreas molhadas.</p>
+        </div>
+        <div class="tip">
+          <b>DPS (Surtos/Raios)</b>
+          <p>Protege seus equipamentos contra picos de energia e surtos elétricos, comuns em tempestades.</p>
+        </div>
+        <div class="tip">
+          <b>Aterramento</b>
+          <p>Tomadas com aterramento reduzem risco de choque e ajudam a proteger aparelhos eletrônicos.</p>
+        </div>
+        <div class="tip">
+          <b>Tomada aquecendo</b>
+          <p>Não é normal. Pode indicar mau contato, sobrecarga ou fiação inadequada. Peça revisão.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; display:flex; justify-content:center">
+        <a class="btn btn-yellow" id="btnWhatsDicas" href="#" target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- HORÁRIOS + MAPA -->
+    <section class="section grid-2">
+      <div class="card" id="horarios">
+        <div class="title-row">
+          <div>
+            <h2>Horário de funcionamento</h2>
+            <p>Atendimento e visitas conforme agenda.</p>
           </div>
+        </div>
 
-          <div class="card map">
-            <iframe
-              title="Mapa de São Paulo"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=S%C3%A3o%20Paulo%2C%20SP&output=embed">
-            </iframe>
+        <div class="hours">
+          <div class="line"><b>Seg a Sex:</b> 08h às 20h</div>
+          <div class="line"><b>Sáb e Dom:</b> 08h às 14h</div>
+          <div class="line" style="border-color: rgba(242,195,0,.25)">
+            <b style="color:var(--accent)">Emergência:</b> se precisar urgente, chama no WhatsApp.
           </div>
         </div>
+
+        <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn btn-green" id="btnWhatsHora" href="#" target="_blank" rel="noopener">💬 Chamar no WhatsApp</a>
+          <a class="btn" href="tel:+5513991653227">📞 Ligar agora</a>
+        </div>
       </div>
-    </section>
 
-    <section class="section" id="seguranca">
-      <div class="container">
-        <div class="section__head">
-          <h2>Dicas de segurança elétrica</h2>
-          <p class="muted">Conteúdos que postamos e orientações rápidas para evitar riscos.</p>
+      <div class="card" id="mapa">
+        <div class="title-row">
+          <div>
+            <h2>Nossa localização</h2>
+            <p>Mapa da Prime Elétrica.</p>
+          </div>
         </div>
 
-        <div class="tips">
-          <article class="tip card">
-            <h3 class="card__title">DR (Diferencial Residual)</h3>
-            <p>Ajuda a proteger contra choques elétricos em caso de fuga de corrente. Essencial em áreas molhadas.</p>
-          </article>
-          <article class="tip card">
-            <h3 class="card__title">DPS (Surtos/Raios)</h3>
-            <p>Protege seus equipamentos contra picos de energia e surtos elétricos, comuns em tempestades.</p>
-          </article>
-          <article class="tip card">
-            <h3 class="card__title">Aterramento</h3>
-            <p>Tomadas com aterramento reduzem risco de choque e ajudam a proteger aparelhos eletrônicos.</p>
-          </article>
-          <article class="tip card">
-            <h3 class="card__title">Tomada aquecendo</h3>
-            <p>Não é normal. Pode indicar mau contato, sobrecarga ou fiação inadequada. Peça revisão.</p>
-          </article>
-        </div>
-
-        <div class="cta center">
-          <a class="btn btn--primary" id="ctaWhats3" href="#" target="_blank" rel="noopener">Tirar dúvidas no WhatsApp</a>
+        <div class="mapwrap">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467544.79805338336!2d-46.558933149999994!3d-23.722628599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a827acd8526e1f%3A0xca510d4949979d56!2sPrime%20El%C3%A9trica!5e0!3m2!1spt-BR!2sbr!4v1771302977150!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contato">
-      <div class="container">
-        <div class="section__head">
-          <h2>Contato</h2>
-          <p class="muted">Fale com a Prime Elétrica e informe cidade, bairro e o serviço desejado.</p>
-        </div>
+    <!-- CONTATO (estilo do print) -->
+    <section class="section card contact-box" id="contato">
+      <h2>Contato</h2>
 
-        <div class="grid2">
-          <div class="card">
-            <h3 class="card__title">Canais</h3>
-            <div class="contact">
-              <a class="contact__item" id="whatsLink" href="#" target="_blank" rel="noopener">
-                <span class="contact__icon" aria-hidden="true">💬</span>
-                <span>
-                  <strong>WhatsApp</strong><br>
-                  <span class="muted">+55 13 99165-3227</span>
-                </span>
-              </a>
+      <div class="contact-inner">
+        <h3>Canais</h3>
 
-              <a class="contact__item" href="https://www.instagram.com/primeletrica_?igsh=eGxwcnNmbDBiZm8x" target="_blank" rel="noopener">
-                <span class="contact__icon" aria-hidden="true">📷</span>
-                <span>
-                  <strong>Instagram</strong><br>
-                  <span class="muted">@primeletrica_</span>
-                </span>
-              </a>
-
-              <a class="contact__item" href="https://www.facebook.com/share/1EtxMSZsKB/" target="_blank" rel="noopener">
-                <span class="contact__icon" aria-hidden="true">📘</span>
-                <span>
-                  <strong>Facebook</strong><br>
-                  <span class="muted">Página oficial</span>
-                </span>
-              </a>
+        <div class="contact-list">
+          <div class="contact-item" id="goWhats">
+            <div class="cico">💬</div>
+            <div>
+              <b>WhatsApp</b>
+              <span>+55 13 99165-3227</span>
             </div>
           </div>
 
-          <div class="card">
-            <h3 class="card__title">Horário</h3>
-            <ul class="bullets">
-              <li>Seg–Sex: 08:00 às 20:00</li>
-              <li>Sáb: 08:00 às 14:00</li>
-              <li>Dom: sob consulta</li>
-            </ul>
-            <p class="muted">*Atendimentos emergenciais podem ser avaliados conforme disponibilidade.</p>
-            <a class="btn btn--primary" id="ctaWhats4" href="#" target="_blank" rel="noopener">Chamar agora</a>
+          <div class="contact-item" id="goInsta">
+            <div class="cico">📷</div>
+            <div>
+              <b>Instagram</b>
+              <span>@primeletrica_</span>
+            </div>
+          </div>
+
+          <div class="contact-item" id="goFace">
+            <div class="cico">📘</div>
+            <div>
+              <b>Facebook</b>
+              <span>Página oficial</span>
+            </div>
           </div>
         </div>
 
-        <footer class="footer">
-          <div class="container footer__inner">
-            <small>© <span id="year"></span> Prime Elétrica. Todos os direitos reservados.</small>
-            <small class="muted">Site estático — pronto para hospedagem.</small>
-          </div>
-        </footer>
+        <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap">
+          <a class="btn btn-green" id="btnWhatsContato" href="#" target="_blank" rel="noopener">💬 Orçamento no WhatsApp</a>
+          <a class="btn" href="tel:+5513991653227">📞 Ligar agora</a>
+        </div>
       </div>
     </section>
-  </main>
 
-  <script src="script.js" defer></script>
+    <footer>
+      Prime Elétrica • Praia Grande, Santos, São Vicente e Cubatão
+    </footer>
+
+  </div>
+
+  <script>
+    // ====== SEUS DADOS (do jeito que você passou) ======
+    const PHONE = "5513991653227";
+    const INSTAGRAM = "https://www.instagram.com/primeletrica_?igsh=eGxwcnNmbDBiZm8x";
+    const FACEBOOK  = "https://www.facebook.com/share/1EtxMSZsKB/";
+
+    function wppLink(msg){
+      return `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+    }
+
+    // Mensagens prontas
+    const msgGeral = "Olá! Vim pelo site da Prime Elétrica. Cidade/bairro: ___ | Serviço: ___";
+    const msgDicas = "Olá! Vi as dicas no site e queria tirar uma dúvida.";
+    const msgOrc  = "Olá! Quero um orçamento. Cidade/bairro: ___ | Serviço: ___";
+
+    // Botões
+    document.getElementById("btnWhatsHero").href = wppLink(msgOrc);
+    document.getElementById("btnWhatsServ").href = wppLink(msgOrc);
+    document.getElementById("btnWhatsDicas").href = wppLink(msgDicas);
+    document.getElementById("btnWhatsHora").href = wppLink("Olá! Gostaria de agendar um atendimento. Cidade/bairro: ___");
+    document.getElementById("btnWhatsContato").href = wppLink(msgGeral);
+
+    // Cards de contato
+    document.getElementById("goWhats").addEventListener("click", () => window.open(wppLink(msgOrc), "_blank"));
+    document.getElementById("goInsta").addEventListener("click", () => window.open(INSTAGRAM, "_blank"));
+    document.getElementById("goFace").addEventListener("click", () => window.open(FACEBOOK, "_blank"));
+
+    // Cards de serviços:
+    // - Ar condicionado abre página
+    // - os demais abrem WhatsApp com serviço já escrito
+    document.querySelectorAll(".svc").forEach(el=>{
+      el.addEventListener("click", ()=>{
+        const type = el.getAttribute("data-type");
+        if(type === "page"){
+          const page = el.getAttribute("data-page");
+          window.location.href = page;
+          return;
+        }
+        const serv = el.getAttribute("data-wpp") || "Serviço";
+        window.open(wppLink(`Olá! Quero orçamento para: ${serv}. Cidade/bairro: ___`), "_blank");
+      });
+    });
+  </script>
 </body>
 </html>
