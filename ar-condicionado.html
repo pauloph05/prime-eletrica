@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instalação de Ar Condicionado | Prime Elétrica</title>
+  <meta name="description" content="Instalação profissional de ar-condicionado split na Baixada Santista e SP. Orçamento rápido no WhatsApp.">
+
+  <style>
+    :root{
+      --azul:#0a4b9e;           /* cor principal Prime */
+      --azul-escuro:#073a7a;
+      --amarelo:#ffcc00;        /* destaque Prime */
+      --bg:#0b1220;
+      --card:#0f1b33;
+      --texto:#eaf0ff;
+      --muted:#b9c7ea;
+      --borda:rgba(255,255,255,.12);
+      --shadow:0 12px 30px rgba(0,0,0,.35);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(1200px 600px at 20% 10%, rgba(10,75,158,.35), transparent 55%),
+                  radial-gradient(900px 500px at 85% 20%, rgba(255,204,0,.15), transparent 50%),
+                  linear-gradient(180deg, #070c16, var(--bg));
+      color: var(--texto);
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 18px 70px;
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:22px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    .badge{
+      font-size:12px;
+      padding:6px 10px;
+      border:1px solid var(--borda);
+      border-radius:999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero{
+      background: linear-gradient(135deg, rgba(10,75,158,.35), rgba(15,27,51,.85));
+      border:1px solid var(--borda);
+      border-radius:18px;
+      padding:26px 22px;
+      box-shadow: var(--shadow);
+    }
+
+    h1{
+      margin: 0 0 10px;
+      font-size: 40px;
+      line-height: 1.05;
+      color: #ffffff;
+    }
+
+    .subtitle{
+      margin: 0 0 18px;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 860px;
+    }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+      margin-top: 16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:0;
+      cursor:pointer;
+      text-decoration:none;
+      font-weight:700;
+      padding: 14px 18px;
+      border-radius: 12px;
+      transition: transform .08s ease, filter .2s ease;
+      user-select:none;
+    }
+    .btn:active{ transform: scale(.98); }
+
+    .btn-whats{
+      background: #25D366;
+      color:#0b1220;
+    }
+    .btn-whats:hover{ filter: brightness(1.02); }
+
+    .btn-call{
+      background: rgba(255,255,255,.08);
+      color: var(--texto);
+      border:1px solid var(--borda);
+    }
+    .btn-call:hover{ filter: brightness(1.08); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      h1{ font-size: 34px; }
+    }
+
+    .card{
+      background: rgba(15,27,51,.92);
+      border:1px solid var(--borda);
+      border-radius:18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2{
+      margin: 0 0 12px;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    /* ✅ Aqui está a correção do seu problema:
+       texto SEMPRE visível (preto no claro não existe aqui),
+       e itens com fundo e borda legíveis no tema escuro */
+    .list{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .list li{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:14px 14px;
+      border-radius:14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--texto);
+    }
+    .check{
+      width:22px;
+      height:22px;
+      flex:0 0 22px;
+      border-radius:6px;
+      display:grid;
+      place-items:center;
+      background: rgba(255,204,0,.18);
+      border: 1px solid rgba(255,204,0,.35);
+      color: var(--amarelo);
+      font-weight:900;
+      line-height:1;
+      margin-top:1px;
+    }
+
+    .mini{
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      margin-top: 10px;
+    }
+
+    .priceBox{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .pill{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 12px;
+      border-radius:14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      color: var(--texto);
+      font-size: 15px;
+    }
+    .pill strong{ color:#fff; }
+
+    .note{
+      margin-top:12px;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,204,0,.35);
+      background: rgba(255,204,0,.10);
+      color: #fff;
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .footer{
+      margin-top:18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align:center;
+      opacity:.95;
+    }
+
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin:16px 0;
+      border-radius:999px;
+    }
+
+    .highlight{
+      color: var(--amarelo);
+      font-weight:700;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div class="brand">
+        <span style="width:10px;height:10px;border-radius:50%;background:var(--amarelo);display:inline-block;"></span>
+        <span>Prime Elétrica</span>
+      </div>
+      <div class="badge">Instalação de Ar Condicionado</div>
+    </div>
+
+    <section class="hero">
+      <h1>Instalação de Ar Condicionado</h1>
+      <p class="subtitle">
+        Instalação profissional de ar-condicionado <span class="highlight">split residencial</span>, com segurança e acabamento.
+        Atendimento em <b>Praia Grande, Santos, São Vicente e Cubatão</b>.
+      </p>
+
+      <div class="ctaRow">
+        <!-- Troque o número/MSG se quiser -->
+        <a class="btn btn-whats" href="https://wa.me/5513991653227?text=Olá!%20Quero%20orçamento%20para%20instalação%20de%20ar-condicionado." target="_blank" rel="noopener">
+          ✅ Orçamento no WhatsApp
+        </a>
+
+        <!-- Se quiser telefone clicável -->
+        <a class="btn btn-call" href="tel:+5513991653227">
+          📞 Ligar agora
+        </a>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Serviços realizados</h2>
+        <ul class="list">
+          <li><span class="check">✓</span> Instalação completa do ar-condicionado</li>
+          <li><span class="check">✓</span> Passagem de tubulação e dreno</li>
+          <li><span class="check">✓</span> Instalação elétrica dedicada (quando necessário)</li>
+          <li><span class="check">✓</span> Disjuntor exclusivo para o aparelho</li>
+          <li><span class="check">✓</span> Suporte, fixação e acabamento</li>
+        </ul>
+
+        <div class="divider"></div>
+        <p class="mini">
+          <b>Importante:</b> valores variam conforme distância, metragem de tubulação, tipo de parede e necessidade de elétrica.
+          Peça seu orçamento e te respondemos rápido.
+        </p>
+      </section>
+
+      <aside class="card priceBox">
+        <h2>Como funciona</h2>
+
+        <div class="pill"><span>✅ Atendimento rápido</span> <strong>Baixada + SP</strong></div>
+        <div class="pill"><span>✅ Profissional qualificado</span> <strong>Segurança</strong></div>
+        <div class="pill"><span>✅ Orçamento no WhatsApp</span> <strong>Imediato</strong></div>
+
+        <div class="note">
+          Clique em <b>“Orçamento no WhatsApp”</b> e envie:
+          <br>• Cidade/bairro
+          <br>• BTUs do aparelho
+          <br>• Se já tem ponto 220V
+          <br>• Distância aproximada entre as unidades
+        </div>
+
+        <a class="btn btn-whats" style="justify-content:center;" href="https://wa.me/5513991653227?text=Olá!%20Quero%20orçamento%20para%20instalação%20de%20ar-condicionado.%20Cidade:%20____%20BTUs:%20____%20Tenho%20220V?%20____" target="_blank" rel="noopener">
+          💬 Quero orçamento agora
+        </a>
+      </aside>
+    </div>
+
+    <p class="footer">
+      Prime Elétrica • Atendimento: Praia Grande • Santos • São Vicente • Cubatão
+    </p>
+
+  </div>
+</body>
+</html>
